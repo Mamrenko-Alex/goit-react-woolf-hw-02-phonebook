@@ -11,13 +11,22 @@ export class ContactForm extends Component {
         const { name, value } = event.target;
         this.setState({ [name]: value });
     };
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const { name, number } = event.target
+        this.props.addContact(name.value, number.value)
+        this.setState({
+            name: '',
+            number: '',
+        })
+    }
     
     render() {
         const { name, number } = this.state;
-        const { handleSubmit } = this.props;
 
         return (
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form className={styles.form} onSubmit={this.handleSubmit}>
                 <label className={styles.label} htmlFor="name_input">Name </label>
                 <input
                     className={styles.input}
