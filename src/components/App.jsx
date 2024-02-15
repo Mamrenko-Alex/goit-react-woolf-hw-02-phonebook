@@ -27,7 +27,6 @@ export class App extends Component {
       name,
       number,
     };
-    console.log(newContact);
     if (this.state.contacts.find(({ name }) => name.toLocaleLowerCase() === newContact.name.toLocaleLowerCase())) {
       alert(`${newContact.name} is already in contacts`)
       return
