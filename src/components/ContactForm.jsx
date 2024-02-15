@@ -53,7 +53,7 @@ export class ContactForm extends Component {
                     required
                 />
                 <button className={styles.button} type="submit">Add contact</button>
-        </form>
+            </form>
         )
     }
 }
